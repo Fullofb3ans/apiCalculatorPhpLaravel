@@ -25,44 +25,12 @@ http://127.0.0.1:8000/api/operation/+
 "id": 1
 }
 
-Для вычисления результата используем Get запрос по адресу
-http://127.0.0.1:8000/api/result/+
-getResult 
-history
+Для вычисления результата используем Get запрос по адресу:
+http://127.0.0.1:8000/api/result/
 
-Деплой
-<!-- обновление пакетов -->
-1) sudo apt update
+Для возврата всей истории используем Get запрос по адресу:
+http://127.0.0.1:8000/api/result/history
 
-<!-- установка apache -->
-2) sudo apt install apache2
-
-<!-- установка php -->
-3) sudo apt install php
-
-<!-- установка сервера mysql -->
-4) sudo apt install mysql-server
-
-<!-- установка сервера mysql -->
-5) 
->sudo mysql
->CREATE USER 'appuser'@'localhoist' IDENTIFIED WITH mysql_native_password BY 'password'
->GRANT ALL PRIVILEGES ON *.* TO 'appuser'@'localhost' WITH GRANT OPTION;
->exit
-<!-- установка composer -->
-6) php -r "copy('http://getcomposer.org/installer', 'composer-setup.php');"
-sudo mv composer.phar /usr/local/bin/composer
-
-<!-- установка рассширений -->
-7) sudo apt install git
-    sudo apt install unzip 
-    sudo apt install php-zip php-mysql php-xml php-curl
-
-<!-- клонирование -->
-8) git clone https://gitflic.ru/project/gazinskyog/calculatorapi-php
-
-<!-- клонирование -->
-9) cd 
 
 Тестирование
 
