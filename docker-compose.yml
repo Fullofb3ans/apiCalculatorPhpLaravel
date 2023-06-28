@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    container_name: nginx
+    image: nginx:alphine
+      ports:
+      - "8080:80"
+  depends_on:
+    -app
+    -db
+  volumes:
+   - ./src:/var/www
+   - ./nginx/conf.d/:etc/nginx/conf.d
+
+db:
+  image: mysql
+  container_name: mysql
+  ports:
+  - "3306:3306"
+  volumes:
+  - ./mysql/data:/var/lib/mysql
+  environment:
+  - MYSQL_DATABASE=Calculators
+  # - MYSQL_ROOT_PASSWORD=
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  container_names: phpmyadmin
+  ports:
+  - "3400:80"
+  depends_on:
+  - db
+
+app:
