@@ -2,35 +2,36 @@ version: '3.8'
 
 services:
 
+
   nginx:
+    image: nginx:alpine
     container_name: nginx
-    image: nginx:alphine
-      ports:
+    ports:
       - "8080:80"
-  depends_on:
-    -app
-    -db
-  volumes:
-   - ./src:/var/www
-   - ./nginx/conf.d/:etc/nginx/conf.d
+    volumes:
+      - ./src:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - db
 
-db:
-  image: mysql
-  container_name: mysql
-  ports:
-  - "3306:3306"
-  volumes:
-  - ./mysql/data:/var/lib/mysql
-  environment:
-  - MYSQL_DATABASE=Calculators
-  # - MYSQL_ROOT_PASSWORD=
 
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  container_names: phpmyadmin
-  ports:
-  - "3400:80"
-  depends_on:
-  - db
+  db:
+     image : mysql
+     container_name : mysql
+     volumes:
+       - ./mysql/data:/var/lib/mysql
+     ports:
+       - "3306:3306"
+     environment:
+       MYSQL_DATABASE: laravel
+       MYSQL_ROOT_PASSWORD:
 
-app:
+
+  phpmyadmin:
+     image: phpmyadmin/phpmyadmin
+     container_name: phpmyadmin
+     ports:
+       - "3400:80"
+     depends_on:
+       - db
+
