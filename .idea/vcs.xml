@@ -4,6 +4,6 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ApiCalcv4/apicalc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ApiCalcv4/apicalc/apicalc" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/apicalc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/calculatorapi" vcs="Git" />
   </component>
 </project>

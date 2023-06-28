@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/ApiCalcv2/tests/Unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/ApiCalcv4" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
